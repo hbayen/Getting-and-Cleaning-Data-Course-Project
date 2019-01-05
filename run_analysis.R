@@ -20,8 +20,6 @@ train_data <- cbind(train_subjects, train_activity, train)
 
 complete_data <- rbind(test_data, train_data)
 
-##activity_names <- list(1 = "Walking",  2 = "Walking Upstairs", 3 = "Walking Downstairs", 4 = "Sitting", 5 = "Standing", 6 = "Laying")
-
 complete_data$activity <- recode_factor(complete_data$activity,'1' = "Walking",  '2' = "Walking Upstairs", '3' = "Walking Downstairs", '4' = "Sitting", '5' = "Standing", '6' = "Laying")
 
 new_data <- select(complete_data, subject, activity, matches("mean|std"))
